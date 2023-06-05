@@ -1,10 +1,11 @@
 
 import './App.css';
+import Navbar from './component/Home/Navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
-     <h1>this is kanaban board initilization</h1>
+    <Navbar/>
     </div>
   );
 }
