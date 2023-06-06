@@ -1,0 +1,27 @@
+.main{
+    background-color: rgb(194, 158, 230);
+    height: 100vh;
+    /* width: 100%; */
+    
+   
+}
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.5); /* Example background color */
+    color: white; /* Example text color */
+    height: 50px;
+    
+   
+    /* Additional styles */
+  }
+  
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    
+    /* Additional styles */
+  }
+  
+  .nav-item {
+    margin-right: 10px;
+    /* Additional styles */
+  }
