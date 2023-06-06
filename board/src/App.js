@@ -1,12 +1,18 @@
+// import './App.css';
+// import Navbar from './component/Home/Navbar/Navbar';
+import { Provider } from 'react-redux';
+import store from './store';
+import List from './component/Home/Todo/List';
 
-import './App.css';
-import Navbar from './component/Home/Navbar/Navbar';
 
 function App() {
   return (
-    <div className="App">
-    <Navbar/>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        {/* <Navbar/> */}
+        <List />
+      </div>
+    </Provider>
   );
 }
 
