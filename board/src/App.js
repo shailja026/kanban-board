@@ -1,17 +1,28 @@
+
+// import './App.css';
+// import Navbar from './component/Home/Navbar/Navbar';
 import Main from './component/Home/MainPage/Main'; 
 import './App.css';
 import Navbar from './component/Home/Navbar/Navbar';
+import { Provider } from 'react-redux';
+import store from './store';
+import List from './component/Home/Todo/List';
+
 
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
+      <div className="App">
+        {/* <Navbar/> */}
+        <List />
+          <Main />
 
-     <Main />
+        <Navbar/>
+      </div>
+    </Provider>
 
-    <Navbar/>
+);
 
-    </div>
-  );
 }
 
 export default App;
