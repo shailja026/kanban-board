@@ -1,10 +1,10 @@
-
+import Main from './component/Home/MainPage/Main'; 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-     <h1>this is kanaban board initilization</h1>
+     <Main />
     </div>
   );
 }
