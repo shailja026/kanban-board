@@ -44,7 +44,7 @@ const AddNew = ({ type, parentId }) => {
   }
 
   return (
-    <div>
+    <div className={style.list_container}>
       <button onClick={openForm}>+ Add {type ? 'a card' : 'another list'}</button>
       {isVisible && <form onSubmit={handleSubmit} className={style.form}>
         <input value={inputValue} onChange={handleChange} placeholder={type ? 'Enter Card' : 'Enter List'} className={style.input} />
