@@ -1,7 +1,11 @@
 *{
+
   margin: 0;
   padding: 0;
-  background-color: rgb(20, 20, 44);
-  color: rgb(239, 105, 105);
+ 
   
+}
+body{
+  background-color: rgb(106, 255, 143);
+  color: rgb(17, 16, 14);
 }

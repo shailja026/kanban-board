@@ -5,14 +5,23 @@ import { RiRadioFill } from 'react-icons/ri';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 import { AiOutlineAlignLeft } from 'react-icons/ai';
 import {  HiUser } from 'react-icons/hi';
+import {RxCross2} from "react-icons/rx";
+import { useNavigate } from 'react-router-dom';
 
 export  function Description() {
+  const navigate = useNavigate()
+  const backTohome = () => {
+    navigate("/")
+
+  }
+
   return (
     <div className={styles.Whole_Box}>
 
         <div className={styles.header_top}>
          <h3><RiRadioFill/>Add Card Element name</h3>
             <p>in list Title_Name</p>
+          <button onClick={backTohome}>  <RxCross2/> </button>
         </div>
 
         <div className={styles.second_top}>

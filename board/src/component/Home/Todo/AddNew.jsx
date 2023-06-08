@@ -35,7 +35,7 @@ const AddNew = ({ type, parentId }) => {
       }))
     } else {
       dispatch(addList({
-        id: v4(),
+         id: v4(),
         title: inputValue
       }))
     }
@@ -46,16 +46,9 @@ const AddNew = ({ type, parentId }) => {
 
   return (
 
-    <div  >
-    <div >
-    
-      {isVisible && 
-      <form onSubmit={handleSubmit} className={style.form}>
-
     <div className={style.list_container}>
-      <button onClick={openForm}>+ Add {type ? 'a card' : 'another list'}</button>
+      
       {isVisible && <form onSubmit={handleSubmit} className={style.form}>
-
         <input value={inputValue} onChange={handleChange} placeholder={type ? 'Enter Card' : 'Enter List'} className={style.input} />
         <div className={style.btn}>
           <button type='submit' className={style.save} >save</button>
@@ -64,7 +57,7 @@ const AddNew = ({ type, parentId }) => {
       </form>}
       <button onClick={openForm} className={style.addNew} >+ Add {type ? 'a card' : 'another list'} </button>
     </div>
-    </div>
+  
   )
 }
 

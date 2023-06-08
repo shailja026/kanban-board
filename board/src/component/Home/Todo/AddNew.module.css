@@ -1,23 +1,13 @@
 .list_container{
 border: 2px solid blue;
 display: flex;
-flex-direction: row-reverse;
+flex-direction: column;
 justify-content: center;
 
 
 }
 
-.form{
 
-   
-   
-   
-    
-
-    margin-top: 3px;
-    border:2px solid red;
-
-}
 
 .input{
     
@@ -36,7 +26,8 @@ justify-content: center;
 .cancel{
     margin-left: 38px;
     padding: 15px;
-    font-weight: 900;
+   font-size: 30px;
+  
    
    
 }
@@ -55,8 +46,9 @@ justify-content: center;
 }
 .btn{
    display: flex;
+   
   justify-content: space-evenly;
-    margin-left: -4px;
+    margin-left: 4px;
     width: 90%;
 
 }
