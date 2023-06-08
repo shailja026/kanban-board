@@ -4,6 +4,7 @@ import { addList } from '../../../store/listSlice';
 import { addCard } from '../../../store/listSlice';
 import { useDispatch } from 'react-redux';
 import style from './AddNew.module.css';
+import {v4} from "uuid"
 
 const AddNew = ({ type, parentId }) => {
 
@@ -28,13 +29,13 @@ const AddNew = ({ type, parentId }) => {
 
     if (type) {
       dispatch(addCard({
-        id: Math.random(),
+        id: v4(),
         title: inputValue,
         parentId: parentId
       }))
     } else {
       dispatch(addList({
-        id: Math.random(),
+        id: v4(),
         title: inputValue
       }))
     }
@@ -44,15 +45,25 @@ const AddNew = ({ type, parentId }) => {
   }
 
   return (
+
+    <div  >
+    <div >
+    
+      {isVisible && 
+      <form onSubmit={handleSubmit} className={style.form}>
+
     <div className={style.list_container}>
       <button onClick={openForm}>+ Add {type ? 'a card' : 'another list'}</button>
       {isVisible && <form onSubmit={handleSubmit} className={style.form}>
+
         <input value={inputValue} onChange={handleChange} placeholder={type ? 'Enter Card' : 'Enter List'} className={style.input} />
-        <div>
-          <button type='submit' className={style.save}>save</button>
-          <RxCross2 onClick={hideForm} className={style.cancel} />
+        <div className={style.btn}>
+          <button type='submit' className={style.save} >save</button>
+          <RxCross2 onClick={hideForm} className={style.cancel} style={{fontSize:"25px"}} />
         </div>
       </form>}
+      <button onClick={openForm} className={style.addNew} >+ Add {type ? 'a card' : 'another list'} </button>
+    </div>
     </div>
   )
 }

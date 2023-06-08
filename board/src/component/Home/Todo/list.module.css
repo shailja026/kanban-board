@@ -1,22 +1,37 @@
 .box{
-    background-color: grey;
-    padding: 3px;
+   
+    /* background-color: rgb(183, 41, 41); */
+    padding: 13px;
+    border: 3px solid white;
+    color: blue;
+   margin: 10px;
+   text-align: center;
+    
 }
 
 .outer{
-    padding: 3px;
+    padding: 13px;
     width: 220px;
+    border: 3 px solid blue;
+    text-align: center;
+   
 }
 
 .list{
     background-color: grey;
     padding: 3px;
+    
+   
+
 }
 
 .new{
     margin-top: 3px;
+    
 }
 
 .title{
     margin-bottom: 4px;
+   
+ 
 }
