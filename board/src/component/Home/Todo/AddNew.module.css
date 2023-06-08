@@ -1,8 +1,22 @@
+.list_container{
+border: 2px solid blue;
+display: flex;
+flex-direction: row-reverse;
+justify-content: center;
+
+
+}
+
 .form{
+
    
    
    
     
+
+    margin-top: 3px;
+    border:2px solid red;
+
 }
 
 .input{
