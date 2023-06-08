@@ -1,7 +1,7 @@
 
 // import './App.css';
 // import Navbar from './component/Home/Navbar/Navbar';
-import Main from './component/Home/MainPage/Main'; 
+
 import './App.css';
 import Navbar from './component/Home/Navbar/Navbar';
 import { Provider } from 'react-redux';
@@ -13,11 +13,11 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        {/* <Navbar/> */}
+        <Navbar/> 
         <List />
-          <Main />
+          
 
-        <Navbar/>
+       
       </div>
     </Provider>
 

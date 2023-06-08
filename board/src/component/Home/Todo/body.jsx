@@ -4,7 +4,7 @@ import Style from './body.module.css';
 
 const body = () => {
   return (
-    <div>
+    <div style={{border:"3px solid blue"}}>
       <div className={Style.container}><List /></div>
     </div>
   )
