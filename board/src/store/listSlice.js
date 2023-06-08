@@ -8,43 +8,50 @@ const listSlice = createSlice({
     },
     reducers: {
         addList: (state, action) => {
-            state.list.push(action.payload)
+            if(state.list){
+                state.list.push(action.payload)
+            }
+           
             // console.log("action:", action)
         },
         addCard: (state,action) => {
+            console.log(state.list)
             // console.log("action", action, state.list)
             state.list.forEach((item) => {
                 if(item.id === action.payload.parentId){
                     if(Object.hasOwn(item, "children")){
-                        item.children.push(action.payload)
+                        item.children.push(action.payload);
+                        console.log(item.children)
                     }
                     else{
                         item.children = [];
-                        item.children.push(action.payload)
+                        item.children.push(action.payload);
+                        console.log(item.children)
                     }
                 }
             })
         },
         update : (state,action)=>{
-        //     editColumnTitle(state, action) {
-        //         const { index, newName } = action.payload;
-        //         state[index].title = newName;
-        //       },
-      
+            console.log(action.payload)
+        //     const {id } = action.payload;
+        //     const index = state.list.findIndex(item => item.id = id);
+        //    if(index!==-1){
+        //     state.list[index].title = ""
+        //    }
+        
            
         },
         removeList : (state , action) => {
           
-            state.list.forEach((item)=>{
-                if(item.id === action.payload.id){
-                   console.log((item))
-                   
-                }
-            })
-             console.log(action.payload.cardInfo)
-   
-            //state.list.forEach((item,ind)=> console.log(item))
-    
+           
+          const {cardInfo , listId} = action.payload
+          console.log(cardInfo , listId);
+          const todo = state.list.find((list) => list.id === action.payload.listId);
+          console.log(todo)
+          if(todo){
+         todo.children=todo.children.filter((el) => el.id !== cardInfo.id);
+          }
+           
 
         }
     }
