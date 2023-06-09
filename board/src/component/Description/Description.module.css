@@ -1,7 +1,8 @@
 .Whole_Box{
     /* border: 2px solid red; */
+    overflow: auto;
     width: 50%;
-    height: 70vh;
+    height: 90vh;
     margin: 0 auto 40px ;
     margin-top: 4%;
     z-index: 10;
