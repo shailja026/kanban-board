@@ -12,7 +12,9 @@ const List = () => {
   const dispatch = useDispatch()
 
   const listItem = useSelector(store => store.listSlice.list)
-  const editHead = ({id , text}) => {
+
+  const editHead = (id , text) => {
+    console.log(id,text)
       dispatch(update({id,text}))
   }
 
@@ -23,8 +25,9 @@ const List = () => {
       listItem && listItem.map((list) => (
         <div className={style.outer} key={list.id}>
           <div className={style.box}>
-            <div className={style.title}>{list.title}
-            <button onClick={(e)=> editHead(list.id , e.target.value)}> <MdEditSquare/></button>
+            <div className={style.title}> 
+            <input value={list.title} onChange={(e)=>editHead(list.id , e.target.value)} />
+
             </div>
             {list?.children?.length > 0 && list.children.map((children) => <Card key={children.id} cardInfo={children} listId={list.id}/>)}
             <div className={style.new}><AddNew type='card' parentId={list.id} /></div>
