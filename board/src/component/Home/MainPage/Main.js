@@ -3,12 +3,21 @@ import "./Main.css";
 import Navbar from "../Navbar/Navbar";
 import List from "../Todo/List";
 
+import AddSome from "../Navbar/addSome";
+
+
+
 function Main() {
+  
   return (
-  <>
-   <Navbar/> 
-   <List />
-  </>
+    <>
+      <Navbar />
+
+     <AddSome/>
+      <List />
+    
+
+    </>
   );
 }
 

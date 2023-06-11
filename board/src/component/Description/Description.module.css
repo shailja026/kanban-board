@@ -1,12 +1,12 @@
 .Whole_Box{
     /* border: 2px solid red; */
-    overflow: auto;
+    overflow-y: auto;
     width: 50%;
     height: 90vh;
     margin: 0 auto 40px ;
     margin-top: 4%;
     z-index: 10;
-    background-color: rgb(236, 241, 246);
+    /* background-color: rgb(84, 155, 226); */
     color: rgb(10, 12, 12);
     /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
