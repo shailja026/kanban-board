@@ -1,0 +1,78 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+
+  width: 100vw;
+  height: 80px;
+
+  align-items: center;
+  color: rgb(255, 251, 251);
+  background-color: rgb(3, 3, 3);
+  /* background: linear-gradient(to bottom left, #666699 0%, #999966 99%); */
+}
+.lists {
+  display: flex;
+  height: 50%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.appIcon {
+  margin-right: 30px;
+  size: 80%;
+}
+
+.navbar h1 {
+  font-style: italic;
+  font-size: 50px;
+  text-shadow: 2px 0.3px 0.2px;
+  margin-right: 45px;
+  margin-top: -10px;
+}
+
+.icons input {
+  width: 280px;
+  height: 30px;
+  border-radius: 1px;
+  border: none;
+  background-color: rgb(218, 211, 211);
+}
+.icons {
+  display: flex;
+  width: 500px;
+  padding: 5px;
+  font-size: 50px;
+}
+.icons div {
+  margin-left: 50px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+.notification {
+  font-size: x-large;
+}
+.menu {
+  border: 3px solid red;
+}
+.btn {
+  height: 40px;
+  padding: 20px;
+  border: none;
+  /* background-color: rgb(106, 255, 57); */
+  background: linear-gradient(to bottom left, #ff6666 0%, #00ffff 99%);
+  color: rgb(4, 5, 4);
+  font-weight: 900;
+  /* background: transparent; */
+  font-size: larger;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.ul {
+  width: 200px;
+  height: 200px;
+}
+.ul li {
+  padding: 10px;
+}

@@ -1,0 +1,19 @@
+.maindiv {
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(240, 78, 148);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(3, 17, 33, 1) 0%
+  );
+}
+.title {
+  /* flex-grow: 1; */
+  color: white;
+}
+.btn {
+  color: wheat;
+}
