@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./mainNav.module.css";
-import { Button, Drawer } from "@mui/material";
+import { Button } from "@mui/material";
 
 import { useDispatch } from "react-redux";
 import { changeBackgraound } from "../../../../store/listSlice";
@@ -18,7 +18,7 @@ function MainNav({ setOpenSideMenu }) {
 
   return (
     <div className={styles.maindiv}>
-      <h1 className={styles.title}>title</h1>
+      <h1 className={styles.title}>Kanban board</h1>
       <Button
         className={styles.btn}
         sx={{ backgroundColor: "black", color: "white" }}
@@ -27,7 +27,7 @@ function MainNav({ setOpenSideMenu }) {
        
         Change Background
       </Button>
-      
+
     </div>
   );
 }

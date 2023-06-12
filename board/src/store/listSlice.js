@@ -7,6 +7,8 @@ const listSlice = createSlice({
     cardObj: {},
     disCriSave: [],
     isChangeBgValue: false,
+	colorOption : false,
+	imageOption : false,
   },
   reducers: {
     addList: (state, action) => {
@@ -54,11 +56,44 @@ const listSlice = createSlice({
       state.cardObj = action.payload;
     },
     disCription: (state, action) => {
-      console.log("hii", action.payload);
+        const { id, text } = action.payload;
+      const index = state.list.findIndex((item) => item.id === id);
+      if (index !== -1) {
+        state.list[index].title = text;
+	  }
     },
     changeBackgraound: (state, action) => {
       state.isChangeBgValue = action.payload;
     },
+	moveList:(state, action)=>{
+        const {sourceIndex, destinationIndex, listId} = action.payload;
+          
+        // Remove the list from the source index
+        const listData = state.list.splice(sourceIndex, 1)[0];
+        
+        // Insert the listData into the destination index
+        state.list.splice(destinationIndex, 0, listData);
+    },
+
+    moveCard:(state, action)=>{
+        const { sourceListId, destinationListId, sourceIndex, destinationIndex, cardId } = action.payload;
+
+        // Find the source and destination lists
+        const sourceList = state.list.find((list)=> list.id === sourceListId);
+        const destinationList = state.list.find((list)=> list.id === destinationListId)
+
+         // Remove the card from the source list
+      const card = sourceList.children.splice(sourceIndex, 1)[0];
+
+       // Insert the card into the destination list
+       destinationList.children.splice(destinationIndex, 0, card);
+    },
+    setColorOption : (state , action) => {
+		state.colorOption = action.payload
+	},
+	setImageOption : (state , action) => {
+		state.colorOption = action.payload
+	},
   },
 });
 
@@ -71,6 +106,10 @@ export const {
   setCardObject,
   disCription,
   changeBackgraound,
+  moveCard,
+  moveList,
+  setColorOption,
+  setImageOption
 } = listSlice.actions;
 
 export default listSlice.reducer;

@@ -3,12 +3,19 @@
   height: 80px;
   display: flex;
   justify-content: space-between;
-  background: rgb(240, 78, 148);
+  background: rgb(187, 10, 87);
   background: radial-gradient(
     circle,
     rgba(238, 174, 202, 1) 0%,
     rgba(3, 17, 33, 1) 0%
   );
+}
+.maindiv h1{
+
+        font-family: initial;
+        font-size: 40px;
+        text-shadow: 2px 3px 3px;
+    
 }
 .title {
   /* flex-grow: 1; */

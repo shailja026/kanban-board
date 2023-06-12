@@ -1,25 +1,32 @@
 .box{
    
     /* background-color: rgb(183, 41, 41); */
-    padding: 13px;
+    padding: 20px;
     border: 3px solid white;
     color: blue;
    margin: 10px;
    text-align: center;
+   height: auto
+
     
 }
 
 .outer{
     padding: 13px;
-    width: 220px;
+    width: 300px;
     border: 3 px solid blue;
     text-align: center;
+    margin-top: 15px;
+
    
 }
 
 .list{
     background-color: grey;
-    padding: 3px;
+    padding: 20px;
+    border: 3px solid red;
+    
+
     
    
 
@@ -27,11 +34,25 @@
 
 .new{
     margin-top: 3px;
+    /* border:8px solid blue */
     
 }
 
 .title{
     margin-bottom: 4px;
+    /* border: 3px solid black; */
+    height: 30px;
+    font-weight: 800;
+    /* background-color: cadetblue; */
+
    
  
+}
+.title input{
+    height: 30px;
+    width: 90%;
+    background-color: cadetblue;
+    font-weight: 700;
+    font-size: 20px;
+  
 }

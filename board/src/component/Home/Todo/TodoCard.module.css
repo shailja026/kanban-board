@@ -1,12 +1,26 @@
 .container{
     display: flex;
     justify-content: space-between;
-    background-color: rgb(222, 206, 206);
+    background-color: rgb(226, 137, 137);
     padding: 5px;
-    margin-top: 2px;
+    margin-top: 18px;
     text-align: center;
     color: rgb(25, 7, 7);
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 10px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    width: 96%;
+    font-size: 20px;
+    border-radius: 5px;
+    height: 30px;
+    
+    
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.container button{
+    border: none;
+    font-size: 15px;
+}
+.icon{
+    border: none;
+    size: large;
 }

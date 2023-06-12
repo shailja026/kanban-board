@@ -1,18 +1,16 @@
 import React from 'react'
 import AddNew from './AddNew'
 import { useDispatch, useSelector } from 'react-redux'
-import { MdEditSquare } from "react-icons/md"
-import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
-
+import { Draggable, Droppable } from 'react-beautiful-dnd'
 import style from './list.module.css'
 import Card from './TodoCard'
-// import { useDeferredValue } from 'react'
+
 import { update } from '../../../store/listSlice'
 
 const List = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const listItem = useSelector(store => store.listSlice.list)
+  const listItem = useSelector((store) => store.listSlice.list);
 
   const editHead = (id, text) => {
     console.log(id, text)
@@ -21,36 +19,72 @@ const List = () => {
 
   return (
 
-    <div style={{ display: "flex" }}>
-<div>
-      {
-        listItem && listItem.map((list, ind) => (
-          <div className={style.outer} key={list.id}>
-            <div className={style.box}>
-              <div className={style.title}>
-                <input value={list.title} onChange={(e) => editHead(list.id, e.target.value)} />
-
-              </div>
-                  {list?.children?.length > 0 && list.children.map((children) => <Card key={children.id} cardInfo={children} listId={list.id} />)}
-               <div className={style.new}><AddNew type='card' parentId={list.id} /></div>
-            </div>
+    // <div style={{ display: "flex" }}>
+    <div style={{ display: "flex"}}>
+      <Droppable droppableId="ROOT" type="group">
+        {(provided) => (
+          <div style={{display:"flex"}} {...provided.droppableProps} ref={provided.innerRef}>
+            {listItem &&
+              listItem.map((list, index) => (
+                <Draggable draggableId={list.id} key={list.id} index={index}>
+                  {(provided) => (
+                    <div
+                      className={style.outer}
+                      key={list.id}
+                      {...provided.dragHandleProps}
+                      {...provided.draggableProps}
+                      ref={provided.innerRef}
+                    >
+                      <div className={style.box}>
+                        <div className={style.title}>
+                          <input
+                            value={list.title}
+                            onChange={(e) => editHead(list.id, e.target.value)}
+                          />
+                        </div>
+                        {list?.children?.length > 0 &&
+                          list.children.map((children, index) => (
+                            // <Draggable
+                            //   draggableId={children.id}
+                            //   key={children.id}
+                            //   index={index}
+                            // >
+                            //   {(provided) => (
+                            //     <div
+                            //       {...provided.dragHandleProps}
+                            //       {...provided.draggableProps}
+                            //       ref={provided.innerRef}
+                            //     >
+                                  <Card
+                                    key={children.id}
+                                    cardInfo={children}
+                                    cardId = {children.id}
+                                    index={index}
+                                  />
+                            //     </div>
+                            //   )}
+                            // </Draggable>
+                          ))}
+                        <div className={style.new}>
+                          <AddNew type="card" parentId={list.id} />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+            {provided.placeholder}
           </div>
-        ))}
+        )}
+      </Droppable>
+      <div className={style.outer}>
+        <div className={style.list}>
+          <AddNew />
+        </div>
+      </div>
     </div>
+    // </div>
+  );
+};
 
-
-  
-
-
-
-<div className={style.outer}>
-  <div className={style.list}>
-    <AddNew />
-  </div>
-</div>
-    </div >
-
-  )
-}
-
-export default List
+export default List;

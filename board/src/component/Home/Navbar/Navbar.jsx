@@ -4,7 +4,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import HelpCenterIcon from "@mui/icons-material/HelpCenter";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
 import AppsIcon from "@mui/icons-material/Apps";
 
 import styles from "./Navbar.module.css";
