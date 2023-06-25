@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Draggable, Droppable } from 'react-beautiful-dnd'
 import style from './list.module.css'
 import Card from './TodoCard'
+import {MdDelete} from "react-icons/md"
+import { deleteList } from '../../../store/listSlice'
 
 import { update } from '../../../store/listSlice'
 
@@ -16,6 +18,11 @@ const List = () => {
     console.log(id, text)
     dispatch(update({ id, text }))
   }
+
+  function handleDelete(id){
+    console.log("listId",id);
+    dispatch(deleteList(id))
+    }
 
   return (
 
@@ -35,7 +42,13 @@ const List = () => {
                       {...provided.draggableProps}
                       ref={provided.innerRef}
                     >
+                     
                       <div className={style.box}>
+                      <MdDelete onClick={()=>handleDelete(list.id)} style={{
+                        marginLeft:"200px",
+                       fontSize:"30px"
+
+                        }}/>
                         <div className={style.title}>
                           <input
                             value={list.title}
@@ -44,26 +57,15 @@ const List = () => {
                         </div>
                         {list?.children?.length > 0 &&
                           list.children.map((children, index) => (
-                            // <Draggable
-                            //   draggableId={children.id}
-                            //   key={children.id}
-                            //   index={index}
-                            // >
-                            //   {(provided) => (
-                            //     <div
-                            //       {...provided.dragHandleProps}
-                            //       {...provided.draggableProps}
-                            //       ref={provided.innerRef}
-                            //     >
+                         
                                   <Card
                                     key={children.id}
                                     cardInfo={children}
                                     cardId = {children.id}
                                     index={index}
+                                    listId={list.id}
                                   />
-                            //     </div>
-                            //   )}
-                            // </Draggable>
+                         
                           ))}
                         <div className={style.new}>
                           <AddNew type="card" parentId={list.id} />

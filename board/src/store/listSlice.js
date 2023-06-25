@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice,current } from "@reduxjs/toolkit";
 
 const listSlice = createSlice({
   name: "listSlice",
@@ -42,15 +42,17 @@ const listSlice = createSlice({
         state.list[index].title = text;
       }
     },
-    removeList: (state, action) => {
-      const { cardInfo, listId } = action.payload;
-      console.log(cardInfo, listId);
-      const todo = state.list.find((list) => list.id === action.payload.listId);
-      console.log(todo);
-      if (todo) {
-        todo.children = todo.children.filter((el) => el.id !== cardInfo.id);
-      }
-    },
+	removeList: (state, action) => {
+		const { cardInfo, listId } = action.payload;
+		const listIndex = state.list.findIndex((list) => list.id === listId);
+	  
+		if (listIndex !== -1) {
+		  const updatedChildren = state.list[listIndex].children.filter(
+			(child) => child.id !== cardInfo.id
+		  );
+		  state.list[listIndex].children = updatedChildren;
+		}
+	  },
 
     setCardObject: (state, action) => {
       state.cardObj = action.payload;
@@ -84,6 +86,7 @@ const listSlice = createSlice({
 
          // Remove the card from the source list
       const card = sourceList.children.splice(sourceIndex, 1)[0];
+      // console.log("carddeleted",current(card))
 
        // Insert the card into the destination list
        destinationList.children.splice(destinationIndex, 0, card);
@@ -94,6 +97,11 @@ const listSlice = createSlice({
 	setImageOption : (state , action) => {
 		state.colorOption = action.payload
 	},
+
+	deleteList:(state, action)=>{
+		const listId = action.payload;
+		state.list = state.list.filter((list)=> list.id !== listId);
+   }
   },
 });
 
@@ -109,7 +117,8 @@ export const {
   moveCard,
   moveList,
   setColorOption,
-  setImageOption
+  setImageOption,
+  deleteList
 } = listSlice.actions;
 
 export default listSlice.reducer;

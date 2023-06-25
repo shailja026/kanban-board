@@ -17,7 +17,30 @@ const imageArr = [
 
 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKs0lnRQZeUmt9NCjLCmsmvO4JPB_6BE9rCg&usqp=CAU",
 
-"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHNkcHitTgAPXlnPJ9-H_moBqBR4GBm_opag&usqp=CAU"
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHNkcHitTgAPXlnPJ9-H_moBqBR4GBm_opag&usqp=CAU",
+"https://images.pexels.com/photos/207353/pexels-photo-207353.jpeg?auto=compress&cs=tinysrgb&w=600",
+
+"https://images.pexels.com/photos/17055522/pexels-photo-17055522/free-photo-of-bird-water-field-summer.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+
+"https://images.pexels.com/photos/16639142/pexels-photo-16639142/free-photo-of-wood-road-landscape-couple.png?auto=compress&cs=tinysrgb&w=600&lazy=load",
+
+"https://images.pexels.com/photos/16639142/pexels-photo-16639142/free-photo-of-wood-road-landscape-couple.png?auto=compress&cs=tinysrgb&w=600&lazy=load",
+
+"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBdb2owVpmgplA_OvP3FTO3XaO2h5srqFScipGz8CSzJ6k7iYk",
+
+"https://images.pexels.com/photos/13059363/pexels-photo-13059363.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+
+"https://images.pexels.com/photos/14818545/pexels-photo-14818545.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+
+"https://images.pexels.com/photos/16958360/pexels-photo-16958360/free-photo-of-car-on-highway.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+"https://images.pexels.com/photos/16444182/pexels-photo-16444182/free-photo-of-red-lotus-flowers.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+
+"https://images.pexels.com/photos/16839562/pexels-photo-16839562/free-photo-of-close-up-of-wedding-veil-and-high-heels.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+
+"https://images.pexels.com/photos/16963635/pexels-photo-16963635/free-photo-of-art-architecture-travel-statue.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+
+"https://images.pexels.com/photos/14019500/pexels-photo-14019500.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+
 ]
 
 export default imageArr

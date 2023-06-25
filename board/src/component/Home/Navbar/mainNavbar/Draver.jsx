@@ -8,7 +8,10 @@ import colorArray from "./color";
 import imageArr from "./imgApi";
 import { useState } from "react";
 import { setColorOption, setImageOption } from "../../../../store/listSlice";
+import Main from "../../MainPage/Main"
 function Draver() {
+
+  const [mainDisplay,setMainDisplay] = useState(false)
   const { isChangeBgValue } = useSelector((store) => store.listSlice);
   const { colorOption } = useSelector((store) => store.listSlice);
   const { imageOption } = useSelector((store) => store.listSlice);
@@ -23,16 +26,19 @@ function Draver() {
 
   const colorFun = () => {
     dispatch(setColorOption(!colorOption));
+    // dispatch(setImageOption(false))
     
   };
   const imageFun = () => {
     dispatch(setImageOption(!imageOption));
+    // dispatch(setColorOption(false))
    
   };
 
   return (
-    <div className={styles.main} style={{ width: "300x" }}>
-      <Drawer anchor="right" open={true}>
+    <div className={styles.main}  >
+      <Drawer anchor="right" open={true} >
+        <div style={{width:"500px"}}>
         <div className={styles.operner} >
           <h1>Call your color</h1>
           <MdClose onClick={closeDrawr} size={25} />
@@ -41,29 +47,33 @@ function Draver() {
           <div className={styles.box1} onClick={colorFun}></div>
           <div className={styles.box2} onClick={imageFun}></div>
         </div>
+        {colorOption ?   <div>
         <Grow in={colorOption}>
           <div className={styles.colorOptions}>
-            {colorArray.map((color, i) => {
+            { colorArray.map((color, i) => {
               return (
                 <div
                   key={i}
                   className={styles.color}
                   style={{
+
                     backgroundColor: color,
+
                   }}
+
                 ></div>
               );
             })}
           </div>
         </Grow>
-        <Grow in={imageOption}>
+        </div> :   <Grow in={true}>
           <div className={styles.imageOptions}>
-            {imageArr.map((img, i) => {
+            { imageArr.map((img, i) => {
               
               return (
                 <div
                   key={i}
-                  className={styles.color}
+                  className={styles.image}
                   style={{
                     backgroundImage: `url(${img})`,
                     backgroundRepeat: "no-repeat",
@@ -73,7 +83,10 @@ function Draver() {
               );
             })}
           </div>
-        </Grow>
+        </Grow>}
+      
+      
+        </div>
       </Drawer>
     </div>
   );
