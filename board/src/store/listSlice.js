@@ -7,8 +7,9 @@ const listSlice = createSlice({
     cardObj: {},
     disCriSave: [],
     isChangeBgValue: false,
-	colorOption : false,
-	imageOption : false,
+	 colorOption : false,
+	 imageOption : false,
+   background : []
   },
   reducers: {
     addList: (state, action) => {
@@ -101,6 +102,13 @@ const listSlice = createSlice({
 	deleteList:(state, action)=>{
 		const listId = action.payload;
 		state.list = state.list.filter((list)=> list.id !== listId);
+   },
+
+   addbackground : (state,action) => {
+    // console.log("hii shailu",action.payload)
+    state.background.push(action.payload)
+    // console.log("hii shailja gupta",state.background)
+
    }
   },
 });
@@ -118,7 +126,8 @@ export const {
   moveList,
   setColorOption,
   setImageOption,
-  deleteList
+  deleteList,
+  addbackground
 } = listSlice.actions;
 
 export default listSlice.reducer;

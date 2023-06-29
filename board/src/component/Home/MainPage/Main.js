@@ -47,15 +47,15 @@ function Main() {
   }
   
   return (
-    <>
+    <div style={{backgroundColor:"pink",height:"100vh"}}>
       <Navbar />
       <AddSome/>
       <DragDropContext onDragEnd={handleDragDrop}>
-        <List />
+      <List />
       </DragDropContext>
     
 
-    </>
+    </div>
   );
 }
 

@@ -7,8 +7,9 @@ import styles from "./draver.module.css";
 import colorArray from "./color";
 import imageArr from "./imgApi";
 import { useState } from "react";
-import { setColorOption, setImageOption } from "../../../../store/listSlice";
+import { setColorOption, setImageOption,addbackground } from "../../../../store/listSlice";
 import Main from "../../MainPage/Main"
+
 function Draver() {
 
   const [mainDisplay,setMainDisplay] = useState(false)
@@ -34,6 +35,13 @@ function Draver() {
     // dispatch(setColorOption(false))
    
   };
+  const addNewBg = (color,id) => {
+    console.log(color,id)
+    if(color.id === id){
+      dispatch(addbackground(color.color))
+    }
+    
+  }
 
   return (
     <div className={styles.main}  >
@@ -54,13 +62,14 @@ function Draver() {
               return (
                 <div
                   key={i}
+                  id={color.id}
                   className={styles.color}
                   style={{
 
                     backgroundColor: color,
 
                   }}
-
+                  onClick={(color,id)=>addNewBg(color,id)}
                 ></div>
               );
             })}
@@ -73,12 +82,14 @@ function Draver() {
               return (
                 <div
                   key={i}
+                  
                   className={styles.image}
                   style={{
                     backgroundImage: `url(${img})`,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                   }}
+                  
                 ></div>
               );
             })}

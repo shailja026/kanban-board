@@ -8,8 +8,8 @@
 body{
   /* background-color: rgb(106, 255, 143); */
   /* background: linear-gradient( #33ccff 0%, #ff66ff 85%); */
-  background: rgb(238,174,202);
-background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  /* background: rgb(238,174,202); */
+/* background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
   color: rgb(17, 16, 14);
   height: 100vh;
 }
