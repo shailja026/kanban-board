@@ -2,25 +2,32 @@
     display: flex;
     justify-content: space-between;
     background-color: rgb(226, 137, 137);
-    padding: 5px;
+    padding: 0.5rem;
     margin-top: 18px;
     text-align: center;
     color: rgb(25, 7, 7);
     font-weight: 500;
     margin-bottom: 10px;
-    width: 96%;
+    width: 85%;
     font-size: 20px;
     border-radius: 5px;
-    height: 30px;
-    
-    
+    height: 30%;
+    /* border: 5px solid green; */
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .container button{
     border: none;
     font-size: 15px;
 }
+
+
 .icon{
     border: none;
-    size: large;
+   
+    padding: 0.1rem;
+    text-decoration: none;
+    background-color: rgb(226, 137, 137);
+    font-size: 25px;
+    /* border: 5px solid red; */
 }

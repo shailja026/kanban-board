@@ -116,7 +116,8 @@ function Navbar() {
             m="16px"
             className={styles.btn}
           >
-            templete keybord
+            templete 
+            
           </MenuButton>
           <MenuList className={styles.ul}>
             <MenuItem p="10px" background="black" color="white">
@@ -151,17 +152,19 @@ function Navbar() {
       </div>
 
       <div className={styles.icons}>
-        <span style={{ display: "flex" }}>
+        <span style={{ display: "flex" ,width:"50%",marginLeft:"2rem",marginRight:"-5rem"}}>
           <input type="text" />
           <SearchIcon />
         </span>
-        <div>
-          <div className={styles.notification}>
+        <div className={styles.notification}>
+        
+        
             <NotificationsActiveIcon />
             <HelpCenterIcon />
             <DarkModeIcon />
             <PermIdentityIcon />
-          </div>
+          
+          
         </div>
       </div>
     </div>

@@ -45,8 +45,9 @@ const List = () => {
                      
                       <div className={style.box}>
                       <MdDelete onClick={()=>handleDelete(list.id)} style={{
-                        marginLeft:"200px",
-                       fontSize:"30px"
+                        marginLeft:"5rem",
+                       fontSize:"30px",
+                       color:"black"
 
                         }}/>
                         <div className={style.title}>

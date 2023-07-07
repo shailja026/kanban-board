@@ -1,19 +1,24 @@
 .box{
    
-    /* background-color: rgb(183, 41, 41); */
+    background-color: rgb(37, 213, 225);
     padding: 20px;
-    border: 3px solid white;
+    /* border: 3px solid white; */
     color: blue;
-   margin: 10px;
+   /* margin: 10px; */
    text-align: center;
-   height: auto
+   height: auto;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   margin-left: 2rem;
+   
 
     
 }
 
 .outer{
     padding: 13px;
-    width: 300px;
+  
+    min-width: 300px;
+    max-width: 30%;
     border: 3 px solid blue;
     text-align: center;
     margin-top: 15px;
@@ -22,9 +27,9 @@
 }
 
 .list{
-    background-color: grey;
+    background-color: rgb(60, 222, 195);
     padding: 20px;
-    border: 3px solid red;
+    /* border: 3px solid red; */
     
 
     
@@ -39,12 +44,13 @@
 }
 
 .title{
-    margin-bottom: 4px;
+    /* margin-bottom: 4px; */
     /* border: 3px solid black; */
     height: 30px;
     font-weight: 800;
-    /* background-color: cadetblue; */
-
+    background-color: cadetblue;
+    padding: 0.2em;
+    margin: 0.8rem;
    
  
 }
@@ -54,5 +60,7 @@
     background-color: cadetblue;
     font-weight: 700;
     font-size: 20px;
+    border: none;
+    
   
 }

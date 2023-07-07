@@ -50,7 +50,7 @@ const Card = ({ cardInfo, listId, index }) => {
                       {cardInfo.title}{" "}
                     </p>
                     <button onClick={edit}>
-                      <BsPencilSquare />
+                      <BsPencilSquare className={Style.icon} />
                     
                     </button>
                     <button onClick={() => RemoveList({ cardInfo, listId })}>
